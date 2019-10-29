@@ -37,7 +37,11 @@ export default function SocialFollowLinks() {
           <a 
             className="twitter-link" 
             href="https://twitter.com/providencegeeks" 
+<<<<<<< HEAD
             title="Follow Us" 
+=======
+            title="Follow Us on Twitter" 
+>>>>>>> Add aria-label to social buttons
             target="_blank" 
             rel="noopener noreferrer"
             aria-label="Follow Us on Twitter" 
