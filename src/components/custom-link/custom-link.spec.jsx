@@ -35,6 +35,38 @@ describe('CustomLink component', () => {
       expect(anchor.prop('target')).toEqual('_blank');
     });
 
+    it('should passthrough all [aria-*] attributes', () => {
+      const ariaMock = "Mock aria prop";
+      customLink = shallow(
+        <CustomLink 
+          url={ externalUrl }
+          aria-mock={ariaMock}
+        >
+          { childContent }
+        </CustomLink>
+      );
+
+      const anchor = customLink.find('a');
+
+      expect(anchor.prop('aria-mock')).toEqual(ariaMock);
+    });
+
+    it('should NOT passthrough non-[aria-*] attributes', () => {
+      const nonAriaMock = "Mock non-aria prop";
+      customLink = shallow(
+        <CustomLink 
+          url={ externalUrl }
+          someProp={nonAriaMock}
+        >
+          { childContent }
+        </CustomLink>
+      );
+
+      const anchor = customLink.find('a');
+
+      expect(anchor).not.toHaveProperty('someProp');
+    });
+
     it('should test children are rendered correctly', () => {
       const child = customLink.find('p');
 
