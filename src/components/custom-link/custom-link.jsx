@@ -9,8 +9,8 @@ const CustomLink = (props) => {
     <div className='custom-link'>
       {
         isExternalLink
-          ? <a href={ props.url } target='_blank' rel='noopener noreferrer'> { props.children }</a>
-          : <Link to={ props.url }> { props.children } </Link>
+          ? <a href={ props.url } target='_blank' rel='noopener noreferrer' {...props}> { props.children }</a>
+          : <Link to={ props.url } {...props}> { props.children } </Link>
       }
     </div>
   );
