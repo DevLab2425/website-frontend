@@ -21,8 +21,9 @@ const ShareBar = (props) => {
 
           <CustomLink 
             className='facebook-share'
-            url={`https://www.facebook.com/sharer/sharer.php?u=${ encodedUri }`}>
-
+            url={`https://www.facebook.com/sharer/sharer.php?u=${ encodedUri }`}
+            aria-label="Share this on Facebook"
+          >
             <FacebookIcon/>
           </CustomLink>
 
@@ -30,37 +31,46 @@ const ShareBar = (props) => {
 
         <div className='social-link-tw'>
 
-          <CustomLink className='twitter-share'
-            url={`https://twitter.com/intent/tweet?status=${ encodedUri } @ProvidenceGeeks`}>
-
+          <CustomLink 
+            className='twitter-share'
+            url={`https://twitter.com/intent/tweet?status=${ encodedUri } @ProvidenceGeeks`}
+            aria-label="Share this on Twitter"
+          >
             <TwitterIcon/>
           </CustomLink>
 
         </div>
 
-        <div className='social-link-tw'>
+        <div className='social-link-li'>
 
-          <CustomLink className='linkedin-share'
-            url={`https://www.linkedin.com/shareArticle?mini=true&url=${ encodedUri }`}>
-
+          <CustomLink 
+            className='linkedin-share'
+            url={`https://www.linkedin.com/shareArticle?mini=true&url=${ encodedUri }`}
+            aria-label="Share this on LinkedIn"
+          >
             <LinkedinIcon/>
           </CustomLink>
 
         </div>
 
-        <div className='social-link-tw'>
+        <div className='social-link-email'>
 
-          <a className='email-share'
-            href={`mailto:?subject=Link From Providence Geeks!&body=${ encodedUri }`}>
-
+          <a 
+            className='email-share'
+            href={`mailto:?subject=Link From Providence Geeks!&body=${ encodedUri }`}
+            aria-label="Email this"
+          >
             <EmailIcon/>
           </a>
 
         </div>
 
-        <div className='social-link-tw'>
-
-          <a className='print-share' onClick={window.print}>
+        <div className='social-link-print'>
+          <a 
+            className='print-share'
+            onClick={window.print}
+            aria-label="Print this"
+          >
             <PrinterIcon/>
           </a>
 
